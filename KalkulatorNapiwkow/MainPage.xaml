@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="KalkulatorNapiwkow.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="30,0"
+            Spacing="25">
+
+            <Grid RowDefinitions="20,50,20,40,20,50,50,20,20,20"
+                  RowSpacing="15"
+                  ColumnDefinitions="250,250"
+                  ColumnSpacing="10">
+
+                <Label
+                    x:Name="KwotaLabel"
+                    Text="Kwota rachunku"
+                    Grid.Row="0"/>
+                <Entry
+                    x:Name="Kwota" 
+                    Grid.Row="1"/>
+
+                <Label
+                    x:Name="ProcentLabel"
+                    Text="Procent napiwku (0%-30%)" 
+                    Grid.Row="2"/>
+                <Slider
+                    x:Name="Procent"
+                    Maximum="30"
+                    Minimum="0"
+                    Grid.Row="3"
+                    ValueChanged="OnProcentChanged"
+                    Grid.ColumnSpan="2"/>
+
+                <Label
+                    x:Name="LiczbaOsobLabel"
+                    Text="Liczba osób: 1"
+                    Grid.Row="4"/>
+                <Stepper 
+                    x:Name="LiczbaOsob"
+                    Maximum="10"
+                    Minimum="1"
+                    ValueChanged="OnLiczbaOsobChanged"
+                    Grid.Row="5"/>
+
+                <Button
+                    x:Name="ObliczBtn"
+                    Text="Oblicz" 
+                    Clicked="OnObliczBtnClicked"
+                    HorizontalOptions="Fill" 
+                    Grid.Row="6"/>
+
+                <Button
+                    x:Name="WyczyscBtn"
+                    Text="Wyczyść" 
+                    Clicked="OnWyczyscBtnClicked"
+                    HorizontalOptions="Fill" 
+                    Grid.Row="6"
+                    BackgroundColor="{DynamicResource PrimaryDark}"
+                    TextColor="Black"
+                    Grid.Column="1"/>
+
+
+                <Label
+                    x:Name="KwotaNapiwku"
+                    Grid.Row="7"
+                    Grid.Column="0"/>
+
+                <Label 
+                    x:Name="SumaDoZaplaty"
+                    Grid.Row="8"
+                    Grid.Column="0"/>
+
+                <Label 
+                    x:Name="KwotaNaOsobe"
+                    Grid.Row="9"
+                    Grid.Column="0"/>
+
+            </Grid>
+            
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
